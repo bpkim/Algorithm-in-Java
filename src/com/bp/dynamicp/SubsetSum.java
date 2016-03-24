@@ -1,4 +1,4 @@
-package com.bp.problemsolving.dynamicp;
+package com.bp.dynamicp;
 
 import java.util.Scanner;
 /**

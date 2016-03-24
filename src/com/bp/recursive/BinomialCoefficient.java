@@ -1,5 +1,9 @@
-package com.bp.problemsolving.recursive;
-
+package com.bp.recursive;
+/**
+ * 
+ * @author BP
+ * 문제로 풀어보는 알고리즘
+ */
 public class BinomialCoefficient {
 
 	final static int MAX = 100;
