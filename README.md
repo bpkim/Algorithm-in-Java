@@ -1,2 +1,3 @@
 # Algorithm-in-Java
-Algorithm in Java (2015.08 ~ )
+시작이 프로젝트의 시작은.. 바야흐로... 2015년 08월.. 
+대학교 4학년이되면서  
