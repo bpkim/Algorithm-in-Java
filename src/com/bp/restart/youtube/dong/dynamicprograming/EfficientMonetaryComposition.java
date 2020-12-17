@@ -53,6 +53,27 @@ public class EfficientMonetaryComposition {
      *  a i-k 를 만드는 방법이 존재하지 않는 경우, ai = INF
      *
      */
+
+    int getMonetaryCntloop2(int n, int money, int [] monetary){
+
+        int [] memo = new int [money+1] ;
+
+        Arrays.fill(memo, 10001);
+
+        memo[0] = 0;
+
+        for(int i = 0 ; i < n ; i++){
+            for(int j = monetary[i] ; j <=money ; j++){
+                if(memo[j - monetary[i]] !=10001){
+                    memo[j] = Math.min(memo[j], memo[j - monetary[i]] +1);
+                }
+            }
+        }
+        if(memo[money] == 10001){
+            return -1;
+        }
+        return memo[money];
+    }
     int getMonetaryCntLoop(int n, int money, int []monetary){
         int result = 0;
 

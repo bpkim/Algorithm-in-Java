@@ -10,6 +10,10 @@ public class SetWarrior {
 //        System.out.println(a.solution(1041));
     }
 
+
+    /**
+     *
+     */
     int getCnt(int [] arr){
 
         int cnt = 0;
