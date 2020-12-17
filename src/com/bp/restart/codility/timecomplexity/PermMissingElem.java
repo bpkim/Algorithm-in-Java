@@ -12,7 +12,7 @@ public class PermMissingElem {
      *
      * Write a function:
      *
-     * class Solution { public int solution(int[] A); }
+     * class MinAbsSum { public int solution(int[] A); }
      *
      * that, given an array A, returns the value of the missing element.
      *

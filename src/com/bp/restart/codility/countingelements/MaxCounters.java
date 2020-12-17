@@ -45,7 +45,7 @@ public class MaxCounters {
      *
      * Write a function:
      *
-     * class Solution { public int[] solution(int N, int[] A); }
+     * class MinAbsSum { public int[] solution(int N, int[] A); }
      *
      * that, given an integer N and a non-empty array A consisting of M integers, returns a sequence of integers representing the values of the counters.
      *

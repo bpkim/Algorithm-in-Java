@@ -32,7 +32,7 @@ public class PermCheck {
      *
      * Write a function:
      *
-     * class Solution { public int solution(int[] A); }
+     * class MinAbsSum { public int solution(int[] A); }
      *
      * that, given an array A, returns 1 if array A is a permutation and 0 if it is not.
      *

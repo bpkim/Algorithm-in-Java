@@ -29,7 +29,7 @@ public class FrogRiverOne {
      *
      * Write a function:
      *
-     * class Solution { public int solution(int X, int[] A); }
+     * class MinAbsSum { public int solution(int X, int[] A); }
      *
      * that, given a non-empty array A consisting of N integers and integer X, returns the earliest time when the frog can jump to the other side of the river.
      *

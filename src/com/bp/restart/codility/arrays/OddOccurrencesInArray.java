@@ -28,7 +28,7 @@ public class OddOccurrencesInArray {
      * the element at index 5 has value 7 and is unpaired.
      * Write a function:
      * <p>
-     * class Solution { public int solution(int[] A); }
+     * class MinAbsSum { public int solution(int[] A); }
      * <p>
      * that, given an array A consisting of N integers fulfilling the above conditions, returns the value of the unpaired element.
      * <p>

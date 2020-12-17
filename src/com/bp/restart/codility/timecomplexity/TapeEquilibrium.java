@@ -32,7 +32,7 @@ public class TapeEquilibrium {
      * P = 4, difference = |10 − 3| = 7
      * Write a function:
      *
-     * class Solution { public int solution(int[] A); }
+     * class MinAbsSum { public int solution(int[] A); }
      *
      * that, given a non-empty array A of N integers, returns the minimal difference that can be achieved.
      *
