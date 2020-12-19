@@ -1,16 +1,12 @@
 package com.bp.restart.youtube.dong.dynamicprograming;
 
-import java.lang.reflect.Array;
-
 public class AntWarrior {
-    int n = 4;
+    int n = 7;
     public static void main(String [] args){
 
         AntWarrior a = new AntWarrior();
 
-        System.out.println(a.getMaxFood(a.n, new int []{1,3,1,5}));
-        System.out.println(a.getMaxFoodDP(a.n, new int []{1,3,1,5}));
-        System.out.println(a.solution(a.n, new int []{1,3,1,5}));
+        System.out.println(a.solution(a.n,     new int []{1,3,1,5,2,5,6}));
 
     }
 
@@ -33,7 +29,24 @@ public class AntWarrior {
      * 식량창고 N개에 대한 정보가 주어졌을 때 얻을 수 있는 식량의 최댓값을 구하는 프로그램을 작성하세요.
      *
      */
+/*
+    int getMaxFoodFinal(int [] arr){
+        int max = Integer.MIN_VALUE;
+        int memo[] = new int[arr.length];
 
+        for(int i = 0 ; i < arr.length; i++){
+
+            for(int j = i+2 ; j < arr.length ; j++){
+                if(arr[j] > max){
+                    max = arr[j];
+                }
+            }
+
+            memo[i]
+        }
+
+        return max;
+    }*/
 
     /**
      * a i = i 번째 식량창고까지의 최적의 해(얻을 수 있는 식량의 최댓값)
@@ -41,75 +54,6 @@ public class AntWarrior {
      *
      * 점화식
      *  a i = max(a i-1, a i-2 + k i) */
-    int [] FOOD_MEMO = new int[n];
-    int getMaxFoodDP(int n, int [] arr){
-
-        if(n<0){
-            return 0;
-        }
-        else if(n < 2) {
-            return arr[n];
-        }
-        if(FOOD_MEMO[n-1] > 0){
-            return FOOD_MEMO[n-1];
-        }
-
-        int a = getMaxFoodDP(n-2, arr);
-        int b = getMaxFoodDP(n-3, arr) + arr[n-1];
-
-        FOOD_MEMO[n-1] = a > b ? a : b;
-
-        return FOOD_MEMO[n-1];
-    }
-
-    int getMaxFood(int n, int [] arr){
-        int [] chk = new int[n];
-        int [][] sortArr = new int[n][2];
-
-        int maxValue = -1 ;
-        int maxIdx = -1 ;
-        int j = 0;
-        while(j < n) {
-
-            maxIdx = -1;
-            maxValue = -1;
-
-            for (int i = 0; i < n; i++) {
-                if (arr[i] > maxValue && chk[i] == 0) {
-                    maxValue = arr[i];
-                    maxIdx = i;
-                }
-            }
-
-            chk[maxIdx] = 1;
-            sortArr[j][0] = maxIdx;
-            sortArr[j][1] = maxValue;
-            j++;
-        }
-
-//        for (int i = 0 ; i < n ; i++){
-//            System.out.println(sortArr[i][0] +" " +sortArr[i][1]);
-//        }
-
-
-        int result = 0;
-
-        int nowIdx= -3;
-        for(int i = 0 ; i < n ; i++){
-
-            // 인접 인덱스인지 확
-            if(sortArr[i][0] != nowIdx +1
-                    && sortArr[i][0] != nowIdx -1){
-
-//                System.out.println(sortArr[i][0] +" " +sortArr[i][1]);
-
-                result += sortArr[i][1];
-                nowIdx = sortArr[i][0];
-            }
-        }
-
-        return result;
-    }
 
     int solution(int n, int [] arr){
         int [] d = new int[n];
@@ -119,6 +63,10 @@ public class AntWarrior {
         for(int i = 2 ; i < n ; i++){
             d[i] = Math.max(d[i-1], d[i-2] + arr[i]);
         }
+        for(int j = 0 ; j < d.length ; j++){
+            System.out.print(d[j]+", ");
+        }
+        System.out.println();
         return d[n-1];
     }
 }
