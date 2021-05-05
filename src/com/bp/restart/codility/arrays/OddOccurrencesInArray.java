@@ -91,4 +91,56 @@ public class OddOccurrencesInArray {
 
         return result;
     }
+
+
+
+    public int solution2(int[] A) {
+
+        // write your code in Java SE 8
+
+        if(A.length == 1){
+            return A[0];
+        }
+        Arrays.sort(A);
+
+        int result = 0;
+
+        int fLeft = 0;
+        int fRight = 1;
+
+        int eLeft = A.length -2;
+        int eRight = A.length -1;
+
+        while(fRight < A.length -1 && eLeft > -1){
+
+            // 다를때
+            // System.out.println("fLeft  fRight");
+            // System.out.println(fLeft +" / "+fRight);
+            // System.out.println(A[fLeft] +" / "+A[fRight]);
+            if(A[fLeft] != A[fRight]){
+                // 한칸 움직여서 확인
+                result = A[fLeft];
+                break;
+            }
+
+            // System.out.println("eLeft  eRight");
+            // System.out.println(eLeft +" / "+eRight);
+            // System.out.println(A[eLeft] +" / "+A[eRight]);
+            if(A[eLeft] != A[eRight]){
+                result = A[eRight];
+                break;
+            }
+
+            fLeft+=2;
+            fRight+=2;
+            eLeft-=2;
+            eRight-=2;
+        }
+/*
+        if(result == 0){
+            result = A[A.length-1];
+        }
+*/
+        return result;
+    }
 }

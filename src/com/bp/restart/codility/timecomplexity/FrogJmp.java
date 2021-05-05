@@ -55,4 +55,23 @@ public class FrogJmp {
         return result;
 
     }
+
+    public int solution2(int X, int Y, int D) {
+        // write your code in Java SE 8
+        if(X == Y){
+            return 0;
+        }
+
+        int i = 0;
+        /*while( X < Y){
+            X+=D;
+            i++;
+        }*/
+        if((Y-X)%D >0){
+            i = (Y-X)/D + 1;
+        }else{
+            i = (Y-X)/D;
+        }
+        return i;
+    }
 }

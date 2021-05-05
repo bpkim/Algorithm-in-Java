@@ -75,6 +75,41 @@ public class GenomicRangeQuery {
 
   */
 
+    public int[] solution3(String S, int[] P, int[] Q){
+        int [] result = new int[P.length];
+
+        char [] sArr;
+        int min = Integer.MAX_VALUE;
+        int start;
+        int end;
+        int i = 1;
+
+        while(i < P.length){
+
+            start = P[i];
+            end = P[i];
+
+            sArr = S.substring(start, end+1).toCharArray();
+
+            Arrays.sort(sArr);
+
+            if(sArr[0] == 'A'){
+                min = 1;
+            }else if(sArr[0] == 'C'){
+                min = 2;
+            }else if(sArr[0] == 'G'){
+                min = 3;
+            }else if(sArr[0] == 'T'){
+                min = 4;
+            }
+
+            result[i] = min;
+            i++;
+
+        }
+
+        return result;
+    }
 
     public int[] solution(String S, int[] P, int[] Q) {
         // write your code in Java SE 8

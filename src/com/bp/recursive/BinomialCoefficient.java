@@ -2,7 +2,7 @@ package com.bp.recursive;
 /**
  * 
  * @author BP
- * ¹®Á¦·Î Ç®¾îº¸´Â ¾Ë°í¸®Áò
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç®ï¿½îº¸ï¿½ï¿½ ï¿½Ë°ï¿½ï¿½ï¿½
  */
 public class BinomialCoefficient {
 

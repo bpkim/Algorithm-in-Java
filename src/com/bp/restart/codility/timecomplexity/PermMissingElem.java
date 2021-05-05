@@ -51,4 +51,21 @@ public class PermMissingElem {
         }
         return A.length +1 ;
     }
+
+
+    public int solution2(int[] A) {
+        // write your code in Java SE 8
+
+        int result = A.length+1;
+        Arrays.sort(A);
+
+        for(int i = 0 ; i < A.length ; i++){
+            if(i+1 != A[i]){
+                result = i+1;
+                break;
+            }
+        }
+
+        return result;
+    }
 }

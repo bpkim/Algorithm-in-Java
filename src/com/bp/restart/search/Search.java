@@ -48,8 +48,27 @@ public class Search {
         }
     }
 
+    int binaryRecursive2(int [] array, int startIdx, int lastIdx, int find){
+
+        if(lastIdx < startIdx){
+            return -1;
+        }
+
+        int midIdx = (startIdx + lastIdx)/2;
+
+        if(array[midIdx] == find) {
+            return midIdx;
+        }
+
+        if (array[midIdx] > find){
+            return binaryRecursive2(array, startIdx, midIdx-1, find);
+        }else{
+            return binaryRecursive2(array, midIdx+1, lastIdx, find);
+        }
+    }
     /**
      * 이진 탐색
+     * long(n)
      * @param array
      * @param find
      * @return
@@ -84,7 +103,9 @@ public class Search {
         Search search = new Search();
         for(int i = 0 ; i < 9 ; i ++) {
             System.out.println(search.binaryRecursive(array, 0, array.length - 1, i));
+            System.out.println(search.binaryRecursive2(array, 0, array.length - 1, i));
             System.out.println(search.binary(array, i));
+            System.out.println("=========");
         }
     }
 

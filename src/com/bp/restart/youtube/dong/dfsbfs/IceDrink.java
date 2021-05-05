@@ -14,6 +14,10 @@ public class IceDrink {
                                     , {1, 1, 1, 1, 1}
                                     , {0, 0, 0, 0, 0}};
 
+        int [][] map2 = new int[][]  {{0, 0, 1, 1, 0}
+                , {0, 0, 0, 1, 1}
+                , {1, 1, 1, 1, 1}
+                , {0, 0, 0, 0, 0}};
 
         int n = 4;
         int m = 5;
@@ -40,11 +44,28 @@ public class IceDrink {
             }
         }
 
-        System.out.println(ice);
+
+        for(int i = 0 ; i < n ; i++){
+            for(int j = 0 ; j < m ; j++){
+                if(map2[i][j] == 0 ){
+
+                    a.getIce(map2,n,m, i, j, ++ice);
+                }
+            }
+        }
+
+        System.out.println();
 
         for(int i = 0 ; i < n ; i++){
             for(int j = 0 ; j < m ; j++){
                 System.out.print(map[i][j]+" ");
+            }
+            System.out.println();
+        }
+        System.out.println("---");
+        for(int i = 0 ; i < n ; i++){
+            for(int j = 0 ; j < m ; j++){
+                System.out.print(map2[i][j]+" ");
             }
             System.out.println();
         }
@@ -61,6 +82,25 @@ public class IceDrink {
      *
      *
      */
+
+    void getIce(int [][]map, int n, int m, int i, int j, int ice){
+
+        if(i<0 || j < 0
+            || i >=n || j >= m){
+            return;
+        }
+
+        if(map[i][j] > 0){
+            return;
+        }
+
+        map[i][j] = ice;
+
+        getIce(map, n, m, i+1, j, ice);
+        getIce(map, n, m, i, j+1, ice);
+    }
+
+
 
     /* 재귀 */
     void dfs(int [][] map, int n, int m, int nowy, int nowx, int ice){

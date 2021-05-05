@@ -49,4 +49,41 @@ public class BinaryGap {
         return maxCnt;
     }
 
+
+    /**
+     * 20210211 풀이
+     * @param N
+     * @return
+     */
+    public int solution2(int N) {
+        int i = 0;
+        int maxCnt = 0;
+        int tmpCnt = 0;
+        while(N > 0){
+
+            // 1의 오른쪽에 있는 0 갯 수 세기
+            if(i > 0 && N % 2 == 0){
+                tmpCnt ++;
+            }
+
+            // 오른쪽 1일때
+            if(i > 0 && N % 2 == 1){
+                if(maxCnt < tmpCnt){
+                    maxCnt = tmpCnt;
+                }
+                tmpCnt = 0;
+                i = 0;
+            }
+
+            // 왼쪽 1 일때
+            if(N % 2 == 1){
+                i++;
+            }
+
+
+            N = N/2;
+        }
+
+        return maxCnt;
+    }
 }

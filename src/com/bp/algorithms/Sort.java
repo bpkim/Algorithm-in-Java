@@ -13,8 +13,10 @@ public class Sort {
 	}
 
 	/**
-	 * Quick Sort 
-	 * �ð����⵵ nlogn2n ���� ������.
+	 * Quick Sort
+	 * 기준 데이터를 설정하고 그 기준보다 큰 데이터와 작은 데이터의 위치를 바꾸는 방법
+	 * 가장 많이 사용되는 일고리즘
+	 * 시간복잡도 nlogn2n 가장 빠르다.
 	 * @param arr
 	 * @param left
 	 * @param right
@@ -42,7 +44,7 @@ public class Sort {
 				arr[right]=arr[left];
 				right--;
 			}
-		}// while ����
+		}// while ����
 		
 		arr[left] = pivot;
 		pivot = left;
@@ -55,8 +57,8 @@ public class Sort {
 		return arr;
 	}
 	/**
-	 * Bubble Sort 
-	 * �ð����⵵ n^2
+	 * Bubble Sort
+	 * 시간복잡도 n^2
 	 * @param arr
 	 * @return
 	 */
@@ -73,7 +75,7 @@ public class Sort {
 	}
 	/**
 	 * SelectSort
-	 * �ð����⵵ n
+	 * 시간복잡도 n
 	 * @param arr
 	 * @return
 	 */
@@ -95,12 +97,15 @@ public class Sort {
 		return arr;
 	}
 	/**
-	 * InsertSort 
-	 * �ð����⵵ n^2
-	 * ���� �����ȿ��� ��� �����ϴ°� 
-	 * ���� ��� ù�����ε����� 1 �̴ϱ� 0 ~ 1 �ȿ��� ����
-	 * �״����� 0 ~2 �̷��� ���� ������ �������鼭  ���Ӱ� ���� �� ���� ��ġ�� �����ذ��鼭 
-	 * �����Ѵ�. 
+	 * InsertSort
+	 * 시간복잡도 n^2
+	 * 일정 범위안에서 계속 정렬하는거
+	 * 예를 들어 첫번재인덱스가 1 이니까 0 ~ 1 안에서 정렬
+	 * 그다음은 0 ~2 이렇게 점차 범위를 넓혀가면서  새롭게 선택 된 곳의 위치를 삽입해가면서
+	 * 정렬한다.
+	 *
+	 * 거의 정렬되어 있는 상태라면 매우 빠르다.
+	 * 최선의 경우 O(n)의 시간 복잡도를 가집니다.
 	 * @param arr
 	 * @return
 	 */

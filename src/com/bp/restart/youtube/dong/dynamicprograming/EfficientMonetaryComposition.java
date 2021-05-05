@@ -6,7 +6,7 @@ public class EfficientMonetaryComposition {
     public static void main(String [] args){
         EfficientMonetaryComposition a = new EfficientMonetaryComposition();
 
-        System.out.println(a.getMonetaryCntLoop(2,15, new int []{2,3}));
+        System.out.println(a.getMonetaryCntLoop(2,20, new int []{2,3}));
 //        System.out.println(a.getMonetaryCnt(15, new int []{2,3}, 0));
 
     }

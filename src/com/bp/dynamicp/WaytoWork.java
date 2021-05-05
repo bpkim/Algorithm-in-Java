@@ -3,7 +3,7 @@ package com.bp.dynamicp;
 import java.util.Scanner;
 
 /**
- * WaytoWork Ãâ±Ù±æ Å¬·¡½º °æ·Î °¹¼ö ¼¼±â ÇÁ·Î±×·¥
+ * WaytoWork ì¶œê·¼ê¸¸ í´ë˜ìŠ¤ ê²½ë¡œ ê°¯ìˆ˜ ì„¸ê¸° í”„ë¡œê·¸ë¨
  * 
  * @author BP
  *
@@ -13,9 +13,9 @@ public class WaytoWork {
 	final static int N = 100;
 
 	final static int MAP[][] = new int[M][N];
-	// ÀÌ¸ğÁ¦ÀÌ¼Ç
+	//	ì´ëª¨ì œì´ì…˜
 	final static long MEMO[][] = new long[M][N];
-	// ´ÙÀÌ³ª¹Í
+	//	ë‹¤ì´ë‚˜ë¯¹
 	final static long DYNAMIC_PATH[][] = new long[M][N];
 
 	final static long JOY_PATH[][] = new long[M][N];
@@ -59,7 +59,7 @@ public class WaytoWork {
 	}
 
 	/* *
-	 * µ¿Àû ÇÁ·Î±×·¡¹Ö Å×ÀÌºíÀ» Ã¤¿ö ³ª°¡´À¸é¼­ °ªÀ» ±¸ÇÏ´Â ¹æ¹ı
+	 * ë™ì  í”„ë¡œê·¸ë˜ë° í…Œì´ë¸”ì„ ì±„ì›Œ ë‚˜ê°€ëŠë©´ì„œ ê°’ì„ êµ¬í•˜ëŠ” ë°©ë²•
 	 */
 	void numPathDynamic(int m, int n) {
 
@@ -145,7 +145,7 @@ public class WaytoWork {
 			printBackPath(m-1,n);
 	}
 
-	// ¾ÈµÊ
+	// ï¿½Èµï¿½
 	void printPath(int m, int n){
 		
 		if (m==4 && n==4)

@@ -5,7 +5,7 @@ public class Coin {
     public static void main(String[] args) {
         Coin coin = new Coin();
 
-        System.out.println(coin.getCoinCnt(1260));
+        System.out.println(coin.getCoinCnt(1250));
     }
 
     /**

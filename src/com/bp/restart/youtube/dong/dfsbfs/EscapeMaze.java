@@ -28,6 +28,8 @@ public class EscapeMaze {
 
     }
 
+
+
     /**
      * 미로 탈출
      * N, M 이 주어지고

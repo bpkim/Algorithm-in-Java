@@ -82,20 +82,27 @@ public class MakeOne {
     int getCntMakeOneLoop(int n) {
 
         for (int i = 2; i < n + 1; i++) {
+
+            //  1 뺏을때
             MAKE_ONE_MEMO[i] = MAKE_ONE_MEMO[i - 1] + 1;
 
+            // 5로 나눴을때
             if (i % 5 == 0) {
                 int tmp = MAKE_ONE_MEMO[i / 5] + 1;
                 if (tmp < MAKE_ONE_MEMO[i]) {
                     MAKE_ONE_MEMO[i] = tmp;
                 }
             }
+
+            // 3으로 나눴을때
             if (n % 3 == 0) {
                 int tmp = MAKE_ONE_MEMO[i / 3] + 1;
                 if (tmp < MAKE_ONE_MEMO[i]) {
                     MAKE_ONE_MEMO[i] = tmp;
                 }
             }
+
+            // 2로 나눴을때
             if (n % 2 == 0) {
 
                 int tmp = MAKE_ONE_MEMO[i / 2] + 1;

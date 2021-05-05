@@ -8,6 +8,10 @@ public class AntWarrior {
 
         System.out.println(a.solution(a.n,     new int []{1,3,1,5,2,5,6}));
 
+        System.out.println(110000>>1);
+
+        System.out.println(Math.pow(10,2));
+
     }
 
     /**

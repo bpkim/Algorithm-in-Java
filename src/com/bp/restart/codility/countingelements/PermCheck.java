@@ -92,4 +92,24 @@ public class PermCheck {
         }
 
     }
+
+
+    public int solution2(int[] A) {
+        // write your code in Java SE 8
+        if(A.length == 1){
+            if(A[0] == 1){
+                return 1;
+            }else{
+                return 0;
+            }
+        }
+        Arrays.sort(A);
+        for(int i = 0 ; i < A.length ; i++){
+            if(i+1 != A[i]){
+                return 0;
+            }
+        }
+
+        return 1;
+    }
 }

@@ -1,7 +1,5 @@
 package com.bp.restart.youtube.dong.serach;
 
-import java.util.Arrays;
-
 public class MakeTteokbokkiRiceCake {
 
     public static void main(String [] args){
@@ -13,6 +11,8 @@ public class MakeTteokbokkiRiceCake {
 
         long start = System.currentTimeMillis();
         System.out.println(a.getMaxHeight(teeokbookiList, m));
+        System.out.println(a.getMaxHeight2(teeokbookiList, m));
+
         long end = System.currentTimeMillis();
         System.out.println("걸린시간(초) : " + (end - start) * 1000);
         System.out.println("걸린시간(밀초) : " + (end - start));
@@ -75,5 +75,17 @@ public class MakeTteokbokkiRiceCake {
         }
 
         return mid;
+    }
+
+    int getMaxHeight2(int [] arr, int m){
+
+        int result = 0;
+        int sum = 0;
+        for(int i = 0 ; i < arr.length ; i++){
+            sum +=arr[i];
+        }
+
+        result = (m + sum) / (arr.length-1);
+        return result;
     }
 }

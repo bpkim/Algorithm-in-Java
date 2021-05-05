@@ -69,6 +69,40 @@ public class MaxCounters {
      *
      */
 
+    public int[] solution2(int N, int[]A){
+
+        int result[] = new int[N];
+        int max = 0;
+        int tmpMax = 0;
+
+        for(int i = 0 ;i < A.length ; i++){
+            if(A[i]>=1 && A[i]<=N){
+
+
+                if(tmpMax < result[A[i]-1]){
+                    result[A[i]-1] = tmpMax +1;
+                }else{
+                    result[A[i]-1] +=1;
+                }
+
+                if(tmpMax < result[A[i]-1]){
+                    tmpMax = result[A[i]-1];
+                }
+            }else if(A[i] == (N+1)){
+
+                max = tmpMax;
+            }
+        }
+
+        for(int i = 0 ;i < result.length ; i++){
+            if(result[i] < max){
+                result[i] = max;
+            }
+        }
+
+        return result;
+    }
+
     public int[] solution(int N, int[] A) {
         // write your code in Java SE 8
 

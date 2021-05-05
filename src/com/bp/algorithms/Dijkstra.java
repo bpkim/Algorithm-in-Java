@@ -60,10 +60,10 @@ public class Dijkstra {
 				rIdx = getRightChild(i);
 
 				cIdx = (lIdx < rIdx) ? rIdx : lIdx;
-				
+
 				if(heap[cIdx]<1)
 					break;
-				
+
 				if (heap[i] < heap[cIdx]) {
 					swap(i, cIdx);
 					i = cIdx;
@@ -82,10 +82,10 @@ public class Dijkstra {
 	}
 
 	void goDijkstra(int [][] route, int l){
-		
+
 		int [] check = new int[l];
 		Heap h = new Heap();
-		
+
 		int now = 0;
 		h.insert(now);
 		System.out.println(h.isHeapEmpty());
@@ -94,33 +94,33 @@ public class Dijkstra {
 			int length = now/1000;
 			int i = (now%1000)/10;
 			int from = (now%1000)%10;
-			
+
 			if(check[i]>0)
 				continue;
-			
+
 			check[i]=1;
-			
-			System.out.println(from+"¿¡¼­ "+i+"±îÁö "+length+"");
-			
-				
-				for(int j = 0 ; j < l ; j ++){
-					if((route[i][j]>0)&&(check[j]<1))
-						h.insert((length+route[i][j])*1000+j*10+i);
-				}
+
+			System.out.println(from+"ï¿½ï¿½ï¿½ï¿½ "+i+"ï¿½ï¿½ï¿½ï¿½ "+length+"");
+
+
+			for(int j = 0 ; j < l ; j ++){
+				if((route[i][j]>0)&&(check[j]<1))
+					h.insert((length+route[i][j])*1000+j*10+i);
 			}
+		}
 	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int[][] route
-		 = { { 0, 1, 2, 0, 7, 0, 0, 0 },//0
-		 { 1, 0, 0, 2, 0, 0, 4, 0 }, //1
-		 { 2, 0, 0, 0, 0, 5, 0, 0 }, //2
-		 { 0, 2, 0, 0, 0, 0, 1, 0 }, //3
-		 { 7, 0, 0, 0, 0, 3, 2, 0 }, //4
-		 { 0, 0, 5, 0, 3, 0, 0, 2 }, //5
-		 { 0, 4, 0, 1, 2, 0, 0, 6 }, //6
-		 { 0, 0, 0, 0, 0, 2, 6, 0 } }; //7
+				= { { 0, 1, 2, 0, 7, 0, 0, 0 },//0
+				{ 1, 0, 0, 2, 0, 0, 4, 0 }, //1
+				{ 2, 0, 0, 0, 0, 5, 0, 0 }, //2
+				{ 0, 2, 0, 0, 0, 0, 1, 0 }, //3
+				{ 7, 0, 0, 0, 0, 3, 2, 0 }, //4
+				{ 0, 0, 5, 0, 3, 0, 0, 2 }, //5
+				{ 0, 4, 0, 1, 2, 0, 0, 6 }, //6
+				{ 0, 0, 0, 0, 0, 2, 6, 0 } }; //7
 
 		Dijkstra d = new Dijkstra();
 
